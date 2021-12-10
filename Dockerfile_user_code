@@ -1,0 +1,76 @@
+
+
+# https://docs.dagster.io/deployment/guides/docker
+
+# Dockerfile_user_code
+
+FROM python:3.8-slim
+# 3.7
+
+
+
+RUN python -m pip install --upgrade pip
+
+RUN pip install poetry
+RUN pip install wheel
+
+
+#RUN pip install \
+#    dagster \
+#    dagster-postgres \
+#    dagster-docker
+
+
+RUN mkdir -p /opt/dagster/
+RUN mkdir -p /opt/dagster/app
+WORKDIR /opt/dagster/app
+
+COPY pyproject.toml poetry.toml poetry.lock /opt/dagster/app/
+
+RUN poetry install
+
+
+# Set $DAGSTER_HOME and copy dagster instance there
+
+
+ENV PATH=/opt/dagster/app/.venv/bin:$PATH
+ENV DAGSTER_HOME=/opt/dagster/app/dagster_home
+
+
+RUN mkdir -p $DAGSTER_HOME
+COPY dagster.yaml $DAGSTER_HOME
+
+
+RUN mkdir -p /opt/dagster/app/dagster_home
+COPY dagster.yaml /opt/dagster/app/dagster_home
+
+
+
+# Add repository code
+
+WORKDIR /opt/dagster/app
+
+COPY repo.py /opt/dagster/app
+COPY repository.py /opt/dagster/app
+COPY data_pipeline/ /opt/dagster/app/data_pipeline
+
+
+# Run dagster gRPC server on port 4000
+
+
+EXPOSE 4000
+
+# Using CMD rather than ENTRYPOINT allows the command to be overridden in
+# run launchers or executors to run other commands using this image
+# CMD ["dagster", "api", "grpc", "-h", "0.0.0.0", "-p", "4000", "-f", "repo.py"]
+
+CMD ["dagster", "api", "grpc", "-h", "0.0.0.0", "-p", "4000", "-f", "repository.py"]
+
+
+
+
+
+
+
+
+
