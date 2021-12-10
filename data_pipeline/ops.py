@@ -9,14 +9,14 @@ from dagster import op
 @op()
 def name_sting(context):
     context.log.info("Successful load name_string")
-    # filename = "data_folder/sampledata.csv"
-    return "data_folder/sampledata.csv"
+    # filename = "sampledata/sampledata.csv"
+    return "sampledata/sampledata.csv"
 
 
 @op()
 def container_name(context):
     context.log.info("Successful load container_name")
-    return "anyazuriteblob"
+    return "azuriteblob"
 
 
 @op()
@@ -36,8 +36,8 @@ def load_csv_from_blob(
         container=container_name, blob= filename
     )
     context.log.info(f"Successfully initiated client")
-    # dir_to_create = "".join(filename.split("/")[0:-1])
-    dir_to_create = "data_folder"
+    dir_to_create = "".join(filename.split("/")[0:-1])
+    # dir_to_create = "data_folder"
     os.makedirs(dir_to_create, exist_ok=True)
     context.log.info(f"Successfully checked dir: {dir_to_create}")
     with open(filename, "wb") as file:

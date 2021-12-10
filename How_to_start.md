@@ -1,5 +1,5 @@
 
-
+# Power Shell
 Set-Variable -Name "DAGSTER_HOME" -value "./.dagster"
 Get-Variable -Name "DAGSTER_HOME"
 
@@ -9,7 +9,7 @@ Get-Variable -Name "DAGSTER_HOME"
 # need to be absolute path
 
 # works in bash
-export DAGSTER_HOME="/home/heiko/Repos/dagster/.dagster"
+export DAGSTER_HOME="/home/heiko/Repos/dagster_azurite/.dagster"
 dagster-daemon run
 
 
@@ -24,7 +24,7 @@ COPY dagster.yaml $DAGSTER_HOME
 
 # works in bash
 dagit -m repository
-
+dagit -f repository.py
 
 
 
