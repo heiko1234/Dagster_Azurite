@@ -27,6 +27,9 @@ PING blob (172.21.0.3): 56 data bytes
 # not yet
 docker exec -it docker_example_dagit ping blob
 
+# ping from normal laptop
+ping -c5 172.21.0.3  # works to connect to blob
+
 
 
 docker exec -it docker_example_user_code ping blob
