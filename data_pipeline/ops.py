@@ -32,8 +32,9 @@ def load_csv_from_blob(
     filename
 ):
 
+    context.log.info(f"Init load csv from blob")
     client = context.resources.adls.blob_client.get_blob_client(
-        container=container_name, blob= filename
+        container=container_name, blob=filename
     )
     context.log.info(f"Successfully initiated client")
     dir_to_create = "".join(filename.split("/")[0:-1])
@@ -43,7 +44,7 @@ def load_csv_from_blob(
     with open(filename, "wb") as file:
         blob_data = client.download_blob()
         blob_data.readinto(file)
-
+    context.log.info(f"Successfully saved downloaded file")
     df = pd.read_csv(filename, sep=";")
     context.log.info(f"Successful loaded file: {filename}")
     Path(filename).unlink()
