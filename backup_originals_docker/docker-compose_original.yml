@@ -13,8 +13,27 @@ services:
       POSTGRES_PASSWORD: "postgres_password"
       POSTGRES_DB: "postgres_db"
     networks:
-      - docker_example_network
+      # - docker_example_network
+      - general_nw
   
+
+  # creates an azurite blobstorage
+  # azurite:
+  #  build:
+  #    dockerfile: ./Dockerfile_azurite
+  #    context: .
+  #  container_name: azurite_blobstorage
+  #  hostname: azurite
+  #  environment:
+  #    AZURE_STORAGE_ACCOUNT: devstoreaccount1
+  #    AZURE_STORAGE_ACCESS_KEY: Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
+  #  ports:
+  #    - 10000:10000
+  #    - 10001:10001
+  #  networks:
+  #    # - docker_example_network
+  #    - general_nw
+
   # This service runs the gRPC server that loads your user code, in both dagit
   # and dagster-daemon. By setting DAGSTER_CURRENT_IMAGE to its own image, we tell the
   # run launcher to use this same image when launching runs in a new container as well.
@@ -33,7 +52,7 @@ services:
       DAGSTER_POSTGRES_DB: "postgres_db"
       DAGSTER_CURRENT_IMAGE: "docker_example_user_code_image"
     networks:
-      - docker_example_network
+      # - docker_example_network
       - general_nw
 
   # This service runs dagit, which loads your user code from the user code container.
@@ -63,7 +82,7 @@ services:
     volumes: # Make docker client accessible so we can terminate containers from dagit
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
-      - docker_example_network
+      # - docker_example_network
       - general_nw
     depends_on:
       - docker_example_postgresql
@@ -87,19 +106,18 @@ services:
     volumes: # Make docker client accessible so we can launch containers using host docker
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
-      - docker_example_network
+      # - docker_example_network
       - general_nw
     depends_on:
       - docker_example_postgresql
       - docker_example_user_code
 
+#networks:
+#  docker_example_network:
+#    driver: bridge
+#    name: docker_example_network
 
 networks:
   general_nw:
-    # connect to pre existing network with azurite for mlflow
-    external: true
     driver: bridge
     name: general_nw
-  docker_example_network:
-    driver: bridge
-    name: docker_example_network
