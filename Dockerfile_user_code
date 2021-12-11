@@ -14,6 +14,9 @@ RUN python -m pip install --upgrade pip
 RUN pip install poetry
 RUN pip install wheel
 
+RUN apt-get update
+RUN apt-get install inetutils-ping
+
 
 #RUN pip install \
 #    dagster \

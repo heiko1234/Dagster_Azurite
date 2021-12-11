@@ -97,9 +97,10 @@ services:
 networks:
   general_nw:
     # connect to pre existing network with azurite for mlflow
-    external: true
-    driver: bridge
-    name: general_nw
+    # https://tjtelan.com/blog/how-to-link-multiple-docker-compose-via-network/
+    # https://training.play-with-docker.com/docker-networking-hol/
+    external:
+      name: general_nw
   docker_example_network:
     driver: bridge
     name: docker_example_network
