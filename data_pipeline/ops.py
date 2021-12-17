@@ -11,6 +11,7 @@ def name_sting(context):
     context.log.info("Successful load name_string")
     # filename = "sampledata/sampledata.csv"
     return "sampledata/sampledata.csv"
+    # return "sampledata.csv"
 
 
 @op()
@@ -25,6 +26,15 @@ def where_to_safe(context):
     return "targetfolder/output_sampledata.csv"
 
 
+@op()
+def call_local_data(context):
+    context.log.info("Succesful load local data")
+    datapath = "./sampledata/sampledata.csv"
+    data = pd.read_csv(datapath, sep = ",")
+    context.log.info(data.iloc[1,:])
+    return data
+
+
 @op(required_resource_keys={"adls"})
 def load_csv_from_blob(
     context,
@@ -37,13 +47,23 @@ def load_csv_from_blob(
         container=container_name, blob=filename
     )
     context.log.info(f"Successfully initiated client")
-    dir_to_create = "".join(filename.split("/")[0:-1])
-    # dir_to_create = "data_folder"
-    os.makedirs(dir_to_create, exist_ok=True)
-    context.log.info(f"Successfully checked dir: {dir_to_create}")
+    try: 
+        dir_to_create = "".join(filename.split("/")[0:-1])
+        # dir_to_create = "data_folder"
+        os.makedirs(dir_to_create, exist_ok=True)
+        context.log.info(f"Successfully checked dir: {dir_to_create}")
+        os.listdir()
+    except BaseException:
+        pass
+
+    context.log.info(f"Check folder: {os.listdir()}")
+    context.log.info(f"Successfully checked container_name: {container_name}")
+    context.log.info(f"Successfully checked filename: {filename}")
+    
     with open(filename, "wb") as file:
         blob_data = client.download_blob()
         blob_data.readinto(file)
+    
     context.log.info(f"Successfully saved downloaded file")
     df = pd.read_csv(filename, sep=";")
     context.log.info(f"Successful loaded file: {filename}")

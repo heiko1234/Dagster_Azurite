@@ -32,6 +32,8 @@ services:
       DAGSTER_POSTGRES_PASSWORD: "postgres_password"
       DAGSTER_POSTGRES_DB: "postgres_db"
       DAGSTER_CURRENT_IMAGE: "docker_example_user_code_image"
+    ports:
+      - "4000:4000"
     networks:
       - docker_example_network
       - general_nw

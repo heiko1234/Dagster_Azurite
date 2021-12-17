@@ -5,6 +5,7 @@ from dagster import ModeDefinition, job
 from data_pipeline.mock_azurite import azurite_resource
 from data_pipeline.ops import name_sting, container_name, where_to_safe
 from data_pipeline.ops import load_csv_from_blob, upload_data_to_blob
+from data_pipeline.ops import call_local_data
 
 
 
@@ -27,6 +28,10 @@ def data_blob_to_blob():
         container_name=containername,
         filename=namestring
     )
+
+
+    # loaded_data = call_local_data()
+
 
     upload_data_to_blob(
         df = loaded_data,
