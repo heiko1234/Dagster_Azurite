@@ -44,9 +44,8 @@ class AzuriteResource:
 
 
 class BlobStorageConnector:
-    """Clas for connecting to blob storage using Azure Connection String"""
 
-    def __init__(self, container_name: str):
+    def __init__(self, container_name):
         self.__container = container_name
         self.connection_string = os.getenv("AZURE_STORAGE_CONNECTION_STRING", "")
         # account_name = os.environ["AZURE_STORAGE_NAME"]
@@ -83,7 +82,7 @@ def get_list_files_in_subcontainer(container_name="azuriteblob", subcontainer="t
 
 
 
-BlobStorageConnector(container_name="azuriteblob").list_files_in_subcontainer(subcontainer="targetfolder", file = ".csv")
+#BlobStorageConnector(container_name="azuriteblob").list_files_in_subcontainer(subcontainer="targetfolder", file = ".csv")
 
 
-get_list_files_in_subcontainer(container_name="azuriteblob", subcontainer="targetfolder", file=".csv")
+#get_list_files_in_subcontainer(container_name="azuriteblob", subcontainer="targetfolder", file=".csv")
