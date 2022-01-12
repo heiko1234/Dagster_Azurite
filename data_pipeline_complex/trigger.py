@@ -15,7 +15,7 @@ from dagster import get_dagster_logger, RunRequest, sensor, schedule
 
 
 
-@sensor(job= data_blob_to_blob, minimum_interval_seconds=60)
+@sensor(job= sensor_data_to_blob, minimum_interval_seconds=60)
 def sensor_blob_data(context):
 
     last_mod_time = str(context.cursor) if context.cursor else 0

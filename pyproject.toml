@@ -21,6 +21,7 @@ dagster-postgres = "0.13.5"
 dagster-k8s = "0.13.5"
 dagit = "0.13.5"
 python-dotenv = "^0.19.2"
+nycflights13 = "^0.0.3"
 
 
 

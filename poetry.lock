@@ -960,6 +960,17 @@ optional = false
 python-versions = ">=3.7,<3.11"
 
 [[package]]
+name = "nycflights13"
+version = "0.0.3"
+description = "A data package for nyc flights (the nycflights13 R package)"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+pandas = ">=0.24.0"
+
+[[package]]
 name = "oauthlib"
 version = "3.1.1"
 description = "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic"
@@ -1570,7 +1581,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8, <3.9"
-content-hash = "1ecf41f76f9c76566465cea9205832d202d9faab2cc0ccfea1e1b302b214a2eb"
+content-hash = "06453c138f24d73d5fb8749f1454f7911abd8f6ec7ad38de67e30a4141a4ef45"
 
 [metadata.files]
 alembic = [
@@ -2146,6 +2157,9 @@ numpy = [
     {file = "numpy-1.21.4-cp39-cp39-win_amd64.whl", hash = "sha256:e3c3e990274444031482a31280bf48674441e0a5b55ddb168f3a6db3e0c38ec8"},
     {file = "numpy-1.21.4-pp37-pypy37_pp73-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:a3deb31bc84f2b42584b8c4001c85d1934dbfb4030827110bc36bfd11509b7bf"},
     {file = "numpy-1.21.4.zip", hash = "sha256:e6c76a87633aa3fa16614b61ccedfae45b91df2767cf097aa9c933932a7ed1e0"},
+]
+nycflights13 = [
+    {file = "nycflights13-0.0.3.tar.gz", hash = "sha256:d9ef2f5cf1bebca7e30b4daf69dcd7a8fd71f25b7196f5dc489879ad7e3e8a37"},
 ]
 oauthlib = [
     {file = "oauthlib-3.1.1-py2.py3-none-any.whl", hash = "sha256:42bf6354c2ed8c6acb54d971fce6f88193d97297e18602a3a886603f9d7730cc"},
