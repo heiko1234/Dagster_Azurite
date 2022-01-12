@@ -1,0 +1,7 @@
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112386 - blob_where_to_safe - LOGS_CAPTURED - Started capturing logs for solid: blob_where_to_safe.
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112386 - blob_where_to_safe - STEP_START - Started execution of step "blob_where_to_safe".
+[32m2022-01-12 21:33:05[0m - dagster - [34mINFO[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - blob_where_to_safe - Successful load where_to_safe: targetfolder/output_sampledata.csv
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112386 - blob_where_to_safe - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - blob_where_to_safe - Writing file at: /home/heiko/Repos/dagster_azurite/tmp5cyupl2r/storage/a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b/blob_where_to_safe/result
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112386 - blob_where_to_safe - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112386 - blob_where_to_safe - STEP_SUCCESS - Finished execution of step "blob_where_to_safe" in 91ms.

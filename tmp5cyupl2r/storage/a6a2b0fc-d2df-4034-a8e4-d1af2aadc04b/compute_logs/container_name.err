@@ -1,0 +1,7 @@
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112387 - container_name - LOGS_CAPTURED - Started capturing logs for solid: container_name.
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112387 - container_name - STEP_START - Started execution of step "container_name".
+[32m2022-01-12 21:33:05[0m - dagster - [34mINFO[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - container_name - Successful load container_name: azuriteblob
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112387 - container_name - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - container_name - Writing file at: /home/heiko/Repos/dagster_azurite/tmp5cyupl2r/storage/a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b/container_name/result
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112387 - container_name - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2022-01-12 21:33:05[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - a6a2b0fc-d2df-4034-a8e4-d1af2aadc04b - 112387 - container_name - STEP_SUCCESS - Finished execution of step "container_name" in 72ms.

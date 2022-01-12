@@ -6,13 +6,8 @@ import pandas as pd
 from dagster import op
 
 
-@op()
-def local_name_string(context):
-    context.log.info("Successful load name_string")
-    # filename = "sampledata/sampledata.csv"
-    return "./sampledata_folder/sampledata.csv"
-    # return "sampledata.csv"
 
+# operators for blob
 
 @op()
 def blob_name_string(context):
@@ -32,26 +27,6 @@ def container_name(context):
 def blob_where_to_safe(context):
     context.log.info("Successful load where_to_safe: targetfolder/output_sampledata.csv")
     return "targetfolder/output_sampledata.csv"
-
-
-@op()
-def local_dump_data(context, data, path):
-    context.log.info("Successful dump data locally")
-    context.log.info(f"path: {path}")
-    context.log.info(f"data: {data}")
-
-    data.to_csv(path)
-
-
-
-@op()
-def call_local_data(context, path):
-    context.log.info("Succesful load local data")
-    # datapath = "./sampledata_folder/sampledata.csv"
-    datapath = path
-    data = pd.read_csv(datapath, sep = ",")
-    context.log.info(f"data: {data}")
-    return data
 
 
 @op(required_resource_keys={"adls"})
@@ -115,6 +90,36 @@ def upload_data_to_blob(
     # remove local temporary file
     Path(relative_filename).unlink()
     context.log.info(f"Successfully deleated local docker: {file}")
+
+
+# operators for local 
+
+@op()
+def local_name_string(context):
+    context.log.info("Successful load name_string")
+    # filename = "sampledata/sampledata.csv"
+    return "./local_sampledata_folder/sampledata.csv"
+    # return "sampledata.csv"
+
+
+@op()
+def local_dump_data(context, data, path):
+    context.log.info("Successful dump data locally")
+    context.log.info(f"path: {path}")
+    context.log.info(f"data: {data}")
+
+    data.to_csv(path)
+
+
+
+@op()
+def call_local_data(context, path):
+    context.log.info(f"path: {path}")
+    # datapath = "./sampledata_folder/sampledata.csv"
+    datapath = path
+    data = pd.read_csv(datapath, sep = ",")
+    context.log.info(f"data: {data}")
+    return data
 
 
 @op()
