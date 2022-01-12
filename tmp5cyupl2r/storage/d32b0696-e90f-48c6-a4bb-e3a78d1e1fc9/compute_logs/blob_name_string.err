@@ -1,7 +1,0 @@
-[32m2022-01-12 21:20:01[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - d32b0696-e90f-48c6-a4bb-e3a78d1e1fc9 - 105125 - blob_name_string - LOGS_CAPTURED - Started capturing logs for solid: blob_name_string.
-[32m2022-01-12 21:20:01[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - d32b0696-e90f-48c6-a4bb-e3a78d1e1fc9 - 105125 - blob_name_string - STEP_START - Started execution of step "blob_name_string".
-[32m2022-01-12 21:20:01[0m - dagster - [34mINFO[0m - data_blob_to_blob - d32b0696-e90f-48c6-a4bb-e3a78d1e1fc9 - blob_name_string - Successful load name_string: sampledata_folder/sampledata.csv
-[32m2022-01-12 21:20:01[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - d32b0696-e90f-48c6-a4bb-e3a78d1e1fc9 - 105125 - blob_name_string - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
-[32m2022-01-12 21:20:01[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - d32b0696-e90f-48c6-a4bb-e3a78d1e1fc9 - blob_name_string - Writing file at: /home/heiko/Repos/dagster_azurite/tmp5cyupl2r/storage/d32b0696-e90f-48c6-a4bb-e3a78d1e1fc9/blob_name_string/result
-[32m2022-01-12 21:20:01[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - d32b0696-e90f-48c6-a4bb-e3a78d1e1fc9 - 105125 - blob_name_string - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2022-01-12 21:20:01[0m - dagster - [34mDEBUG[0m - data_blob_to_blob - d32b0696-e90f-48c6-a4bb-e3a78d1e1fc9 - 105125 - blob_name_string - STEP_SUCCESS - Finished execution of step "blob_name_string" in 66ms.

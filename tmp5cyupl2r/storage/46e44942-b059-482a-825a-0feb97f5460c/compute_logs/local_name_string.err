@@ -1,7 +1,0 @@
-[32m2022-01-12 21:28:16[0m - dagster - [34mDEBUG[0m - dagster_pipeline_sensor - 46e44942-b059-482a-825a-0feb97f5460c - 109644 - local_name_string - LOGS_CAPTURED - Started capturing logs for solid: local_name_string.
-[32m2022-01-12 21:28:16[0m - dagster - [34mDEBUG[0m - dagster_pipeline_sensor - 46e44942-b059-482a-825a-0feb97f5460c - 109644 - local_name_string - STEP_START - Started execution of step "local_name_string".
-[32m2022-01-12 21:28:16[0m - dagster - [34mINFO[0m - dagster_pipeline_sensor - 46e44942-b059-482a-825a-0feb97f5460c - local_name_string - Successful load name_string
-[32m2022-01-12 21:28:16[0m - dagster - [34mDEBUG[0m - dagster_pipeline_sensor - 46e44942-b059-482a-825a-0feb97f5460c - 109644 - local_name_string - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
-[32m2022-01-12 21:28:16[0m - dagster - [34mDEBUG[0m - dagster_pipeline_sensor - 46e44942-b059-482a-825a-0feb97f5460c - local_name_string - Writing file at: /home/heiko/Repos/dagster_azurite/tmp5cyupl2r/storage/46e44942-b059-482a-825a-0feb97f5460c/local_name_string/result
-[32m2022-01-12 21:28:16[0m - dagster - [34mDEBUG[0m - dagster_pipeline_sensor - 46e44942-b059-482a-825a-0feb97f5460c - 109644 - local_name_string - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2022-01-12 21:28:16[0m - dagster - [34mDEBUG[0m - dagster_pipeline_sensor - 46e44942-b059-482a-825a-0feb97f5460c - 109644 - local_name_string - STEP_SUCCESS - Finished execution of step "local_name_string" in 86ms.
