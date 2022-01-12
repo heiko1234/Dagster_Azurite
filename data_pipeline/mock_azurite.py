@@ -34,8 +34,12 @@ class AzuriteResource:
                 f"DefaultEndpointsProtocol=http",
                 f"BlobEndpoint=http://127.0.0.1:10000/{storage_account}",
                 f"QueueEndpoint=http://127.0.0.1:10001/{storage_account}",
+                #f"BlobEndpoint=http://azurite:10000/{storage_account}",
+                #f"QueueEndpoint=http://azurite:10001/{storage_account}",
                 #f"BlobEndpoint=http://172.21.0.3:10000/{storage_account}",
                 #f"QueueEndpoint=http://172.21.0.3:10001/{storage_account}",
+                #f"TableEndpoint=http://127.0.0.1:10002/devstoreaccount1"
+
             ]
         )
         self._blob_client = BlobServiceClient.from_connection_string(connection_string)
@@ -43,6 +47,8 @@ class AzuriteResource:
     @property
     def blob_client(self):
         return self._blob_client
+
+
 
 
 

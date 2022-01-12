@@ -57,7 +57,7 @@ COPY repo.py /opt/dagster/app
 COPY repository.py /opt/dagster/app
 COPY data_pipeline/ /opt/dagster/app/data_pipeline
 
-COPY sampledata /opt/dagster/app/sampledata
+COPY sampledata_folder /opt/dagster/app/sampledata_folder
 
 
 # Run dagster gRPC server on port 4000

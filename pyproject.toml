@@ -20,6 +20,7 @@ dagster-docker = "0.13.5"
 dagster-postgres = "0.13.5"
 dagster-k8s = "0.13.5"
 dagit = "0.13.5"
+python-dotenv = "^0.19.2"
 
 
 

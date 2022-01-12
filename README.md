@@ -62,4 +62,13 @@ dagit -f repository.py
 ![local_green_pipeline](./assets/local_green_pipeline.jpg)
 
 
+# Maybe helpful
+
+Azurite connection: `http://IP:Port/Account`
+
+
+https://blog.johnnyreilly.com/2021/05/15/azurite-and-table-storage-dev-container/
+
+https://github.com/Azure/Azurite/issues/379
+
 

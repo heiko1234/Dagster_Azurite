@@ -7,31 +7,50 @@ from dagster import op
 
 
 @op()
-def name_sting(context):
+def local_name_string(context):
     context.log.info("Successful load name_string")
     # filename = "sampledata/sampledata.csv"
-    return "sampledata/sampledata.csv"
+    return "./sampledata_folder/sampledata.csv"
+    # return "sampledata.csv"
+
+
+@op()
+def blob_name_string(context):
+    context.log.info("Successful load name_string: sampledata_folder/sampledata.csv")
+    # filename = "sampledata/sampledata.csv"
+    return "sampledata_folder/sampledata.csv"
     # return "sampledata.csv"
 
 
 @op()
 def container_name(context):
-    context.log.info("Successful load container_name")
+    context.log.info("Successful load container_name: azuriteblob")
     return "azuriteblob"
 
 
 @op()
-def where_to_safe(context):
-    context.log.info("Successful load where_to_safe")
+def blob_where_to_safe(context):
+    context.log.info("Successful load where_to_safe: targetfolder/output_sampledata.csv")
     return "targetfolder/output_sampledata.csv"
 
 
 @op()
-def call_local_data(context):
+def local_dump_data(context, data, path):
+    context.log.info("Successful dump data locally")
+    context.log.info(f"path: {path}")
+    context.log.info(f"data: {data}")
+
+    data.to_csv(path)
+
+
+
+@op()
+def call_local_data(context, path):
     context.log.info("Succesful load local data")
-    datapath = "./sampledata/sampledata.csv"
+    # datapath = "./sampledata_folder/sampledata.csv"
+    datapath = path
     data = pd.read_csv(datapath, sep = ",")
-    context.log.info(data.iloc[1,:])
+    context.log.info(f"data: {data}")
     return data
 
 
@@ -96,5 +115,17 @@ def upload_data_to_blob(
     # remove local temporary file
     Path(relative_filename).unlink()
     context.log.info(f"Successfully deleated local docker: {file}")
+
+
+@op()
+def sensor_op(context, data):
+    context.log.info(f"data: {data}")
+    a = data.iloc[-1:,:] + 1
+    df = data.append(a, ignore_index=True)
+    context.log.info(f"new df: {df}")
+
+    return df
+
+
 
 
