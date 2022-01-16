@@ -1,0 +1,7 @@
+[32m2022-01-16 15:12:30[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - b40d7ac1-b7d2-4b9b-88c0-26b19c525a0f - 51448 - filetype_parquet - LOGS_CAPTURED - Started capturing logs for solid: filetype_parquet.
+[32m2022-01-16 15:12:30[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - b40d7ac1-b7d2-4b9b-88c0-26b19c525a0f - 51448 - filetype_parquet - STEP_START - Started execution of step "filetype_parquet".
+[32m2022-01-16 15:12:31[0m - dagster - [34mINFO[0m - flight_data_to_blob - b40d7ac1-b7d2-4b9b-88c0-26b19c525a0f - filetype_parquet - filetype: parquet
+[32m2022-01-16 15:12:31[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - b40d7ac1-b7d2-4b9b-88c0-26b19c525a0f - 51448 - filetype_parquet - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2022-01-16 15:12:31[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - b40d7ac1-b7d2-4b9b-88c0-26b19c525a0f - filetype_parquet - Writing file at: /home/heiko/Repos/dagster_azurite/.dagster/storage/b40d7ac1-b7d2-4b9b-88c0-26b19c525a0f/filetype_parquet/result
+[32m2022-01-16 15:12:31[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - b40d7ac1-b7d2-4b9b-88c0-26b19c525a0f - 51448 - filetype_parquet - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2022-01-16 15:12:31[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - b40d7ac1-b7d2-4b9b-88c0-26b19c525a0f - 51448 - filetype_parquet - STEP_SUCCESS - Finished execution of step "filetype_parquet" in 234ms.

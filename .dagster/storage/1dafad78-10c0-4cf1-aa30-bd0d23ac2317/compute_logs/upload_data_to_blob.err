@@ -1,0 +1,33 @@
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - LOGS_CAPTURED - Started capturing logs for solid: upload_data_to_blob.
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - STEP_START - Started execution of step "upload_data_to_blob".
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - upload_data_to_blob - Loading file from: /home/heiko/Repos/dagster_azurite/.dagster/storage/1dafad78-10c0-4cf1-aa30-bd0d23ac2317/split_flightdata/result
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - LOADED_INPUT - Loaded input "data" using input manager "io_manager", from output "result" of step "split_flightdata"
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - upload_data_to_blob - Loading file from: /home/heiko/Repos/dagster_azurite/.dagster/storage/1dafad78-10c0-4cf1-aa30-bd0d23ac2317/container_name/result
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - LOADED_INPUT - Loaded input "container_name" using input manager "io_manager", from output "result" of step "container_name"
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - upload_data_to_blob - Loading file from: /home/heiko/Repos/dagster_azurite/.dagster/storage/1dafad78-10c0-4cf1-aa30-bd0d23ac2317/sub_container_name/result
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - LOADED_INPUT - Loaded input "subcontainer" using input manager "io_manager", from output "result" of step "sub_container_name"
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - upload_data_to_blob - Loading file from: /home/heiko/Repos/dagster_azurite/.dagster/storage/1dafad78-10c0-4cf1-aa30-bd0d23ac2317/str_number/result
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - LOADED_INPUT - Loaded input "filename" using input manager "io_manager", from output "result" of step "str_number"
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - upload_data_to_blob - Loading file from: /home/heiko/Repos/dagster_azurite/.dagster/storage/1dafad78-10c0-4cf1-aa30-bd0d23ac2317/filetype_parquet/result
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - LOADED_INPUT - Loaded input "filetype" using input manager "io_manager", from output "result" of step "filetype_parquet"
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - STEP_INPUT - Got input "data" of type "Any". (Type check passed).
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - STEP_INPUT - Got input "container_name" of type "Any". (Type check passed).
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - STEP_INPUT - Got input "subcontainer" of type "Any". (Type check passed).
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - STEP_INPUT - Got input "filename" of type "Any". (Type check passed).
+[32m2022-01-16 14:39:17[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - STEP_INPUT - Got input "filetype" of type "Any". (Type check passed).
+[32m2022-01-16 14:39:17[0m - dagster - [34mERROR[0m - [31mflight_data_to_blob - 1dafad78-10c0-4cf1-aa30-bd0d23ac2317 - 20816 - upload_data_to_blob - STEP_FAILURE - Execution of step "upload_data_to_blob" failed.
+
+dagster.core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "upload_data_to_blob"::
+
+TypeError: makedirs() got an unexpected keyword argument 'exists_ok'
+
+Stack Trace:
+  File "/home/heiko/Repos/dagster_azurite/.venv/lib/python3.8/site-packages/dagster/core/execution/plan/utils.py", line 44, in solid_execution_error_boundary
+    yield
+  File "/home/heiko/Repos/dagster_azurite/.venv/lib/python3.8/site-packages/dagster/utils/__init__.py", line 383, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/heiko/Repos/dagster_azurite/.venv/lib/python3.8/site-packages/dagster/core/execution/plan/compute_generator.py", line 65, in _coerce_solid_compute_fn_to_iterator
+    result = fn(context, **kwargs) if context_arg_provided else fn(**kwargs)
+  File "/home/heiko/Repos/dagster_azurite/data_pipeline_complex/ops.py", line 55, in upload_data_to_blob
+    os.makedirs(dir_to_create, exists_ok=True)
+[0m

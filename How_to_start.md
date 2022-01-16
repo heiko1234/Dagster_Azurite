@@ -15,6 +15,15 @@ export DAGSTER_HOME="/home/heiko/Repos/dagster_azurite/.dagster"
 dagster-daemon run
 
 
+
+# works in bash with sensors
+
+DAGSTER_HOME=$(pwd)/.dagster dagster-daemon run
+
+DAGSTER_HOME=$(pwd)/.dagster dagit -f repository.py
+
+
+
 # in docker container
 ENV PATH=/opt/dagster/app/.venv/bin:$PATH
 ENV DAGSTER_HOME=/opt/dagster/app/dagster_home

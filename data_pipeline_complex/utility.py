@@ -54,32 +54,37 @@ def all_days(start_date, end_date):
     return output
 
 
-def get_missing_dates(list_dates, list_downloaded_dates):
-    output = [element for element in list_dates if element not in list_downloaded_dates]
+def make_timegrid(start_date, end_date, timeformat, stepsize, grid="minutes"):
+    st_time = dt.datetime.strptime(start_date, timeformat)
+    e_time = dt.datetime.strptime(end_date, timeformat)
+    delta = e_time-st_time
+
+    output = []
+
+    if grid == "minutes":
+        for i in range(int(delta.total_seconds()/60 + int(stepsize))/int(stepsize)):
+            minutes =  st_time+timedelta(seconds=i*60*stepsize)
+            output.append(dt.datetime.strftime(minutes, timeformat))
+    
+    if grid == "days":
+        for i in range(int(delta.days/int(stepsize) + 1)):
+            days =  st_time+timedelta(seconds=i*60*stepsize)
+            output.append(dt.datetime.strftime(days, timeformat))
+    
+    output = output[::-1]
     return output
 
 
+def back_in_time(str_input, dateformat):
+    time = dt.datetime.strptime(str_input, dateformat)-timedelta(days=12)
+    str_time = str(dt.datetime.strftime(time, dateformat))
 
-#strdate = "2022-01-10 10:15"
-
-#start = "2022-01-10"
-
-#end= "2022-01-1"
-#delta = 1
+    return str_time
 
 
-#datetime_range(start = start, end=end, delta=1)
-
-#convert_strdate_to_strday(strdate= strdate)
-
-
-# any_list = ["file.csv", "file3.parquet"]
-
-# remove_fileformats(any_list=any_list)
-
-
-# all_days(start_date = "2021-01-10", end_date = "2021-02-02")
-
+def get_missing_dates(list_dates, list_downloaded_dates):
+    output = [element for element in list_dates if element not in list_downloaded_dates]
+    return output
 
 
 

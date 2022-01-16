@@ -1,0 +1,7 @@
+[32m2022-01-16 15:27:42[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - d58fc86f-46be-4957-a67f-b1a6cb41e0b9 - 65759 - str_number - LOGS_CAPTURED - Started capturing logs for solid: str_number.
+[32m2022-01-16 15:27:42[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - d58fc86f-46be-4957-a67f-b1a6cb41e0b9 - 65759 - str_number - STEP_START - Started execution of step "str_number".
+[32m2022-01-16 15:27:42[0m - dagster - [34mINFO[0m - flight_data_to_blob - d58fc86f-46be-4957-a67f-b1a6cb41e0b9 - str_number - number of the month: 12
+[32m2022-01-16 15:27:42[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - d58fc86f-46be-4957-a67f-b1a6cb41e0b9 - 65759 - str_number - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2022-01-16 15:27:42[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - d58fc86f-46be-4957-a67f-b1a6cb41e0b9 - str_number - Writing file at: /home/heiko/Repos/dagster_azurite/.dagster/storage/d58fc86f-46be-4957-a67f-b1a6cb41e0b9/str_number/result
+[32m2022-01-16 15:27:42[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - d58fc86f-46be-4957-a67f-b1a6cb41e0b9 - 65759 - str_number - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2022-01-16 15:27:42[0m - dagster - [34mDEBUG[0m - flight_data_to_blob - d58fc86f-46be-4957-a67f-b1a6cb41e0b9 - 65759 - str_number - STEP_SUCCESS - Finished execution of step "str_number" in 33ms.

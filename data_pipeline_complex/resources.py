@@ -73,7 +73,7 @@ def get_list_files_in_subcontainer(container_name="azuriteblob", subcontainer="t
 
     output = []
 
-    for blob in get_container_client().list_blobs():
+    for blob in get_container_client(container_name=container_name).list_blobs():
         if subcontainer in blob.name and ".csv" in blob.name:
             output.append(blob.name.split("/")[1])
     return output
