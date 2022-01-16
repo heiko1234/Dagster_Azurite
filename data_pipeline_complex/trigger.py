@@ -50,7 +50,7 @@ def sensor_flight_data(context):
 
     number_of_files = str(len(list_blobs))
 
-    if last_file is None:
+    if number_of_files >= 12:
         return False
     
     #if last_file == last_mod_time:
