@@ -39,9 +39,10 @@ files_in_blob
 
 
 # test single file load ;) works :)
-file12 = client.get_parquet_file(subcontainer="flights", file="12.parquet")
+file12 = client.get_parquet_file(subcontainer="flights", file="11.parquet")
 file12
 
+file12[file12["month"]==12]
 
 
 ##############
@@ -181,6 +182,20 @@ timeneeded.total_seconds()
 
 
 
+# simple filter via dask
+
+filtered_data = data[data["month"]==11]
+
+#time
+starttime=dt.datetime.now()
+# Compute the intermediates
+fdata = dask.compute(filtered_data)
+
+# runtime
+timeneeded = dt.datetime.now()-starttime
+timeneeded.total_seconds()  #0.50 sec
+
+fdata
 
 
 
