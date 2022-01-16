@@ -33,7 +33,7 @@ def sensor_flight_data(context):
     end_date = str(dt.datetime.now().date())
 
 
-    list_downloaded_files = BlobStorageConnector(container_name="azuriteblob").list_files_in_subcontainer(subcontainer=subcontainername, file = filetype_parquet)
+    list_downloaded_files = BlobStorageConnector(container_name="azuriteblob").list_files_in_subcontainer(subcontainer=subcontainername, files_with= filetype_parquet)
     
     #list_downloaded_files
 

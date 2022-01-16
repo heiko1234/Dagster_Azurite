@@ -2,6 +2,10 @@
 
 
 import os
+import io
+
+import pandas as pd
+
 
 from azure.storage.blob import BlobServiceClient
 from azure.storage.blob import ContainerClient
@@ -55,12 +59,21 @@ class BlobStorageConnector:
             self.connection_string, container_name=self.__container)
         return blob_container_client
     
-    def list_files_in_subcontainer(self,subcontainer, file):
+
+    def list_files_in_subcontainer(self, subcontainer, files_with):
         output = []
-        for blob in get_container_client().list_blobs():
-            if subcontainer in blob.name and file in blob.name:
+        for blob in self.get_container_client().list_blobs():
+            if subcontainer in blob.name and files_with in blob.name:
                 output.append(blob.name.split("/")[1])
         return output
+
+    def get_parquet_file(self, subcontainer, file):
+
+        blob_str = subcontainer + "/"+ file
+        bytes = self.get_container_client().get_blob_client(blob=blob_str).download_blob().readall()
+        pq_file = io.BytesIO(bytes)
+        df = pd.read_parquet(pq_file)
+        return df
 
 
 

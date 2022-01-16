@@ -23,6 +23,8 @@ dagit = "0.13.5"
 python-dotenv = "^0.19.2"
 nycflights13 = "^0.0.3"
 pyarrow = "^6.0.1"
+dask = {extras = ["distributed"], version = "^2022.1.0"}
+dask-azureblobfs = "^0.1.0"
 
 
 

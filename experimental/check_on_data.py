@@ -58,3 +58,16 @@ list_csv_blobfiles = check_blobfiles(connection_string=connection_string,
 
 list_csv_blobfiles   # sampledata.csv
 
+
+
+
+list_parquet_blobfiles = check_blobfiles(connection_string=connection_string,
+                                    container_name=container_name,
+                                    sub_container="flights",
+                                    file=".parquet")
+
+
+list_parquet_blobfiles  #
+
+len(list_parquet_blobfiles)  #12
+
