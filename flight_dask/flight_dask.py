@@ -100,6 +100,7 @@ intertimeneeded.total_seconds()
 
 # pip install dask-azureblobfs
 # No module named 'dask.bytes.local'
+# install adlfs
 
 
 from azureblobfs.dask import DaskAzureBlobFileSystem
@@ -110,17 +111,67 @@ import dask.dataframe as dd
 
 account_name = os.getenv("AZURE_STORAGE_ACCOUNT")
 account_key = os.getenv("AZURE_ACCOUNT_KEY")
+connection_string = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+
 
 account_name
 account_key 
 
 
-data = dd.read_parquet("abfs://azuriteblob/flight/*.parquet",
+data = dd.read_parquet("abfs://azuriteblob/flights/*.parquet",
     storage_options={"account_name": account_name,
         "account_key": account_key})
 
 data
 
+
+data2 = dd.read_parquet("abfs://azuriteblob/flights/*.parquet",
+    storage_options={"connection_string": connection_string})
+
+data2
+
+
+
+starttime=dt.datetime.now()
+sums = []
+counts = []
+
+intertimeneeded = dt.datetime.now()-starttime
+intertimeneeded.total_seconds()
+
+# Groupby origin airport
+by_origin = data.groupby('origin')
+
+# Sum of all departure delays by origin
+total = by_origin.dep_delay.sum()
+
+# Number of flights by origin
+count = by_origin.dep_delay.count()
+
+# Save the intermediates
+sums.append(total)
+counts.append(count)
+
+
+# Compute the intermediates
+sums, counts = dask.compute(sums, counts)
+
+# Combine intermediates to get total mean-delay-per-origin
+total_delays = sum(sums)
+n_flights = sum(counts)
+mean = total_delays / n_flights
+
+#
+total_delays
+n_flights
+mean
+
+timeneeded = dt.datetime.now()-starttime
+timeneeded.total_seconds()
+
+
+
+# https://dask-azureblobfs.readthedocs.io/en/latest/usage.html
 
 #data = dd.read_parquet("abfs://account_name/mycontainer/weather*.parquet",
 #    storage_options={"account_name": account_name,
